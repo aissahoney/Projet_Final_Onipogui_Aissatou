@@ -20,7 +20,7 @@ function Connexion() {
     };
 
     return (
-        <div className='py-60'>
+        <div className='flex items-center h-screen'>
 
             <form className={styles.form}>
                 <p className={styles.heading}>LOGIN</p>

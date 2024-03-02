@@ -18,7 +18,7 @@ export default function Allitems() {
   }, []);
 
   return (
-    <>  {isLoading? <LoadingLayout/>  :  <div className="bg-beige-700 grid grid-cols-3 gap-x-5 gap-y-10 py-60">
+    <>  {isLoading? <LoadingLayout/>  :  <div className="bg-beige-700 grid grid-cols-3 gap-x-5 gap-y-10 py-60 h-[100vh]">
     {data.map((item, id) => (
       <Link href={`/articleDetails/${item.id}`}>
         <div
