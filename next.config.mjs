@@ -8,6 +8,11 @@ const nextConfig = {
                 hostname: "images.gr-assets.com",
                 port: "",
             },
+            {
+                protocol: "https",
+                hostname: "images",
+                port: "",
+            },
         ],
     },
 

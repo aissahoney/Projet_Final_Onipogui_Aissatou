@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 import LoadingLayout from "@/components/LoadingLayout";
 
-
 export default function Allitems() {
   const logged = useSelector((state) => state.auth.isAuthenticated);
   const [data, setData] = useState([]);
@@ -18,24 +17,32 @@ export default function Allitems() {
   }, []);
 
   return (
-    <>  {isLoading? <LoadingLayout/>  :  <div className="bg-beige-700 grid grid-cols-3 gap-x-5 gap-y-10 py-60 h-[100vh]">
-    {data.map((item, id) => (
-      <Link href={`/articleDetails/${item.id}`}>
-        <div
-          key={id}
-          className="border-grey border-solid border-2 h-[40vh] flex flex-col items-center justify-center gap-y-4"
-        >
-          <Image
-            src={item.image_url}
-            width={200}
-            height={300}
-            className="h-4/5"
-          />
-          <p> {item.title} </p>
+    <div className="py-60">
+      {" "}
+      {isLoading ? (
+        <LoadingLayout />
+      ) : (
+        <div className="bg-beige-700 grid grid-cols-4 gap-x-10 gap-y-10 m-5 h-full">
+          {data.map((item, id) => (
+            <Link href={`/articleDetails/${item.id}`}>
+              <div
+                key={id}
+                className=" h-[50vh] flex flex-col items-center justify-center gap-y-4  bg-white bg-opacity-30 p-6 rounded"
+              >
+                <Image
+                  src={item.image_url}
+                  width={200}
+                  height={300}
+                  className="h-3/5 shadow-2xl rounded"
+                  alt="livre"
+                />
+                <p> {item.title} </p>
+                <p>Author: {item.authors}</p>
+              </div>
+            </Link>
+          ))}
         </div>
-      </Link>
-    ))}
-  </div>}
-    </>
+      )}
+    </div>
   );
 }

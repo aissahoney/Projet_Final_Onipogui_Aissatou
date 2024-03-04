@@ -1,21 +1,56 @@
 "use client";
 import SearchBar from "@/components/SearchBar";
 import React from "react";
-import styles from "../../../styles/homePage.module.css";
+// import styles from "../../../styles/homePage.module.css";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 // import Allitems from '../allitems/page'
 
 export default function HomePage() {
   return (
     <div>
       <SearchBar />
+      <div className="pl-100 pr-100 h-[40vh] bg-red-800 flex items-center justify-center">
+        <Carousel
+          opts={{
+            gap: "1rem",
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent>
+            <CarouselItem className="basis-1/3"> 1</CarouselItem>
+            <CarouselItem className="basis-1/3">2</CarouselItem>
+            <CarouselItem className="basis-1/3">3</CarouselItem>
+            <CarouselItem className="basis-1/3"> 4</CarouselItem>
+            <CarouselItem className="basis-1/3">5</CarouselItem>
+            <CarouselItem className="basis-1/3">6</CarouselItem>
+            <CarouselItem className="basis-1/3"> 7</CarouselItem>
+            <CarouselItem className="basis-1/3">8</CarouselItem>
+            <CarouselItem className="basis-1/3">9</CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
+
       <div className=" bg-white grid grid-cols-2 gap-5 p-8">
         <div
           className="bg-contain bg-no-repeat bg-center w-full h-80 flex items-center justify-center"
           style={{ backgroundImage: `url('/shelf.png')` }}
         >
           <div className="pb-16">
-            <Image src={"/2.png"} width={200} height={300} />
+            <Image 
+            src={"/2.png"} 
+            width={200} 
+            height={300} 
+            alt={"livre"}/>
           </div>
         </div>
         <div className="p-8">

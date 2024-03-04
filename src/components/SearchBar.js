@@ -7,10 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function SearchBar() {
-
   return (
-    <div className="p-40 grid grid-cols-2 gap-11">
-      <div className="p-10 ">
+    <div className="pb-20  pl-40 grid grid-cols-2 gap-60">
+      <div className=" pt-20">
         <h1 className="text-pink-950">BOOK CHANGE YOUR LIFE</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
@@ -24,17 +23,15 @@ export default function SearchBar() {
             placeholder="Search..."
             list="frameworks"
           />
-          <button className="px-4 text-white bg-pink-950 border-l rounded " > <Link href={"/"}> 
-          Search
-          </Link>
+          <button className="px-4 text-white bg-pink-950 border-l rounded ">
+            {" "}
+            <Link href={"/"}>Search</Link>
           </button>
         </div>
       </div>
-      <div >
-        <Image src={"/hero.png"} width={350} height={400}  alt="booklogo"/>
-
-        <div className="h-24 w-24 bg-pink-950 rounded-full absolute top-3/4 left-1/2 ">
-        </div>
+      <div className="">
+        <Image src={"/hero.png"} width={300} height={300} alt="booklogo" />
+        <div className="h-15 w-15 bg-pink-950 rounded-full absolute top-3/4 left-1/2 "></div>
       </div>
     </div>
   );

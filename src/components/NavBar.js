@@ -14,16 +14,16 @@ export default function NavBar() {
                     </Link>
                 </div>
                 <div className="grid grid-cols-4 ">
-                    <p>
+                    <p className="hover:text-orange-700 ">
                         <Link href={"/allitems"}> Allarticles</Link>
                     </p>
-                    <p>
+                    <p className="hover:text-orange-700 ">
                         <Link href={"/subscription"}>Membership</Link>
                     </p>
-                    <p>
+                    <p className="hover:text-orange-700 ">
                         <Link href={"/connexion"}> Hello Guest </Link>
                     </p>
-                    <p>
+                    <p className="hover:text-orange-700 ">
                         <Link href={"/connexion"}> Favoris</Link>
                     </p>
                 </div>
