@@ -13,7 +13,10 @@ export default function NavBar() {
                         <Image src={"/2.png"} width={80} height={80} />{" "}
                     </Link>
                 </div>
-                <div className="grid grid-cols-4 ">
+                <div className="grid grid-cols-5 ">
+                    <p className="hover:text-orange-700 ">
+                        <Link href={"/"}>home</Link>
+                    </p>
                     <p className="hover:text-orange-700 ">
                         <Link href={"/allitems"}> Allarticles</Link>
                     </p>
@@ -24,7 +27,7 @@ export default function NavBar() {
                         <Link href={"/connexion"}> Hello Guest </Link>
                     </p>
                     <p className="hover:text-orange-700 ">
-                        <Link href={"/connexion"}> Favoris</Link>
+                        <Link href={"/favoris"}> Favoris</Link>
                     </p>
                 </div>
             </nav>

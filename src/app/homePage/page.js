@@ -40,17 +40,13 @@ export default function HomePage() {
         </Carousel>
       </div>
 
-      <div className=" bg-white grid grid-cols-2 gap-5 p-8">
+      <div className=" bg-white grid grid-cols-2 gap-5 p-8 h-[90vh] items-center">
         <div
           className="bg-contain bg-no-repeat bg-center w-full h-80 flex items-center justify-center"
           style={{ backgroundImage: `url('/shelf.png')` }}
         >
           <div className="pb-16">
-            <Image 
-            src={"/2.png"} 
-            width={200} 
-            height={300} 
-            alt={"livre"}/>
+            <Image src={"/2.png"} width={200} height={300} alt={"livre"} />
           </div>
         </div>
         <div className="p-8">

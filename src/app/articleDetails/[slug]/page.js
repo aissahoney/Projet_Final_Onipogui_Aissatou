@@ -37,6 +37,8 @@ export default function Slug({ params }) {
 
   return (
     <div className="p-10 min-h-screen flex flex-col py-60 ">
+    {isLoading ?  <LoadingLayout />:
+    <div>
       <h1 className="text-4xl" onClick={() => router.push("/")}>
         {/* {" "} */}
          {" <- "} Back
@@ -69,13 +71,13 @@ export default function Slug({ params }) {
         <button onClick={() => handleAddFavorite()}> + Add to Favorites</button>
       )}
 
-      {isLoading && <LoadingLayout />}
+</div> }
 
-      <div>
+       <div>
         {favorites?.map((item, id) => (
           <div key={id}>{item?.title}</div>
         ))}
-      </div>
+      </div> 
     </div>
   );
 }
