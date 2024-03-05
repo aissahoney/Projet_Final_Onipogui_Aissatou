@@ -4,9 +4,11 @@
 import { fetchData } from "../api/fetchData";
 import Image from "next/image";
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 import LoadingLayout from "@/components/LoadingLayout";
+// import {useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite } from "@/app/lib/features/FavoritesSlice";
 
 export default function Allitems() {
   const logged = useSelector((state) => state.auth.isAuthenticated);
@@ -16,31 +18,62 @@ export default function Allitems() {
     fetchData(setData, setIsLoading);
   }, []);
 
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.favorites);
+  // console.log(favorites);
+
+  const handleAddFavorite = (item) => {
+    if (item) {
+      dispatch(addFavorite(item));
+    }
+  };
+
+  const handleRemoveFavorite = (item) => {
+    if (item) {
+      dispatch(removeFavorite(item));
+    }
+  };
+
   return (
     <div className="py-60">
       {" "}
       {isLoading ? (
         <LoadingLayout />
       ) : (
-        <div className="bg-beige-700 grid grid-cols-4 gap-x-10 gap-y-10 m-5 h-full">
-          {data.map((item, id) => (
-            <Link href={`/articleDetails/${item.id}`}>
+        <div>
+          <div className="bg-beige-700 grid grid-cols-4 gap-x-10 gap-y-10 m-5 h-full">
+            {data.map((item, id) => (
               <div
                 key={id}
-                className=" h-[50vh] flex flex-col items-center justify-center gap-y-4  bg-white bg-opacity-30 p-6 rounded"
+                className=" h-[60vh] flex flex-col items-center justify-center gap-y-4  bg-white bg-opacity-30 p-6 rounded"
               >
-                <Image
-                  src={item.image_url}
-                  width={200}
-                  height={300}
-                  className="h-3/5 shadow-2xl rounded"
-                  alt="livre"
-                />
-                <p> {item.title} </p>
-                <p>Author: {item.authors}</p>
+                <div>
+                  <Image
+                    src={item.image_url}
+                    width={200}
+                    height={200}
+                    className="h-3/5 shadow-2xl rounded"
+                    alt="livre"
+                  />
+                  <p> {item.title} </p>
+                  <p>Author: {item.authors}</p>
+                  <Link href={`/articleDetails/${item.id}`}> RESUME </Link>
+                </div>
+                <div>
+                  {favorites?.find((favorite) => favorite?.id == item?.id) ? (
+                    <button onClick={() => handleRemoveFavorite(item)}>
+                      - Remove from Favorites
+                    </button>
+                  ) : (
+                    <button onClick={() => handleAddFavorite(item)}>
+                      {" "}
+                      + Add to Favorites
+                    </button>
+                  )}
+                </div>
               </div>
-            </Link>
-          ))}
+            ))}
+          </div>
         </div>
       )}
     </div>

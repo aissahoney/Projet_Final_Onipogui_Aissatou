@@ -3,28 +3,30 @@ import styles from '../../../styles/subscription.module.css';
 import {setEmail,setPassword, registerUser} from '../lib/features/AuthSlice'
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Subscription(){
 
+  //INSCRIOPTION
+
   const dispatch = useDispatch();
-  const { email, password } = useSelector((state) => state.auth);
+  const { email, password, isSubscribed } = useSelector((state) => state.auth);
   const router = useRouter()
 
   const handleRegister = () => {
     dispatch(registerUser());
-    if(email!=''&& password!=''){
-      setTimeout(() => {
-        router.push('/connexion');
-      }, 3000);
-    }
+
     // Rediriger vers la page de connexion ou afficher un message de succès
   };
+  useEffect(()=>{
+    if(isSubscribed){
+      console.log(isSubscribed)
+      router.push('/connexion');
+    }else{
+      console.log(isSubscribed)
+    }
+  },[isSubscribed])
 
-  //   if(email!=''&& password!=''){
-  //   setTimeout(() => {
-  //     router.push('/connexion');
-  //   }, 3000);
-  // }
 
   return (
     <div className='py-60'>

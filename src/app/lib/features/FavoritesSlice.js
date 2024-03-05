@@ -19,8 +19,7 @@ const FavoritesSlice = createSlice({
       const book = action.payload;
       state.favorites = state.favorites.filter(
         (favorite) => favorite.id !== book.id
-      );
-    },
+      );},
   },
 });
 

@@ -9,7 +9,6 @@ export const store = configureStore({
 		
 		reducer:{
             // search: SearchSlice
-       
             auth: AuthSlice,
             favorites: FavoritesSlice
 		}

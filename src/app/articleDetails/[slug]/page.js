@@ -73,11 +73,11 @@ export default function Slug({ params }) {
 
 </div> }
 
-       <div>
+       {/* <div>
         {favorites?.map((item, id) => (
           <div key={id}>{item?.title}</div>
         ))}
-      </div> 
+      </div>  */}
     </div>
   );
 }
