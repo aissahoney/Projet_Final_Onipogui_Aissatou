@@ -46,7 +46,13 @@ export default function HomePage() {
           style={{ backgroundImage: `url('/shelf.png')` }}
         >
           <div className="pb-16">
-            <Image src={"/2.png"} width={200} height={300} alt={"livre"} />
+            <Image
+              src={"/book.jpeg"}
+              className="h-3/5"
+              width={135}
+              height={150}
+              alt={"book of the week"}
+            />
           </div>
         </div>
         <div className="p-8">

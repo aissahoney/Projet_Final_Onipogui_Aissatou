@@ -52,12 +52,12 @@ const AuthSlice = createSlice({
         loginUser(state) {
             // comparaison mdp email avec inscription
             if (state.email == state.userEmail && state.password == state.userPassword) {
-                state.isLoggedIn = true
-                return;
+                
+                return state.isLoggedIn = true;
             }
         },
 
     }
 });
-export const { setEmail, setPassword, registerUser, loginUser, setUserEmail,setUserPassword} = AuthSlice.actions;
+export const { setEmail, setPassword, registerUser, loginUser, setUserEmail,setUserPassword,isLoggedIn} = AuthSlice.actions;
 export default AuthSlice.reducer;

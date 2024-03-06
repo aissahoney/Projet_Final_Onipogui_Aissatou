@@ -1,8 +1,6 @@
-"use Client"
-import React from 'react'
+"use Client";
+import React from "react";
 
 export default function Footer() {
-  return (
-    <div>Footer</div>
-  )
+  return <div className="pt-60">Footer</div>;
 }

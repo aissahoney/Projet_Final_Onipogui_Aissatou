@@ -24,10 +24,9 @@ function Connexion() {
   };
   useEffect(() => {
     if (isLoggedIn) {
-      router.push("/favoris"); 
+      router.push("/favoris");
       console.log(isLoggedIn);
-    }
-    else {
+    } else {
       console.log(isLoggedIn);
     }
   }, [isLoggedIn]);
@@ -58,7 +57,7 @@ function Connexion() {
         <input
           placeholder="Email"
           className={styles.input}
-          type="text"
+          type="email"
           value={userEmail}
           onChange={(e) => dispatch(setUserEmail(e.target.value))}
         />
