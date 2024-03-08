@@ -22,11 +22,13 @@ function Connexion() {
 
     // Rediriger vers la page de connexion ou afficher un message de succès
   };
+ 
   useEffect(() => {
     if (isLoggedIn) {
       router.push("/favoris");
       console.log(isLoggedIn);
     } else {
+     
       console.log(isLoggedIn);
     }
   }, [isLoggedIn]);

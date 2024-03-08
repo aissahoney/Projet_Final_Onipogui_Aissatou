@@ -30,13 +30,13 @@ const AuthSlice = createSlice({
             }
 
             // Créer un objet utilisateur
-            const user = {
-                email: state.email,
-                password: state.password,
-            };
+            // const user = {
+            //     email: state.email,
+            //     password: state.password,
+            // };
 
             // Ajouter l'utilisateur au tableau
-            state.users.push(user);
+            // state.users.push(user);
 
             // Réinitialiser les champs
             // state.email = '';
@@ -53,11 +53,22 @@ const AuthSlice = createSlice({
             // comparaison mdp email avec inscription
             if (state.email == state.userEmail && state.password == state.userPassword) {
                 
-                return state.isLoggedIn = true;
+             state.isLoggedIn = true;
+            }
+            else{
+                alert("email is not recognised please sign up first!")
             }
         },
+        signOut(state){
+            state.isLoggedIn=false,
+            state.isSubscribed=false,
+            state.email='',
+            state.password='',
+            state.userEmail='',
+            state.userPassword=''
+        }
 
     }
 });
-export const { setEmail, setPassword, registerUser, loginUser, setUserEmail,setUserPassword,isLoggedIn} = AuthSlice.actions;
+export const { setEmail, setPassword, registerUser, loginUser, setUserEmail,setUserPassword,isLoggedIn, signOut} = AuthSlice.actions;
 export default AuthSlice.reducer;

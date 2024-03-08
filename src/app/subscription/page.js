@@ -18,11 +18,12 @@ export default function Subscription() {
   };
   useEffect(() => {
     if (isSubscribed) {
-      console.log(isSubscribed);
+      alert("thank you for your subscription! you can nom sign in!");
       router.push("/connexion");
     } else {
       console.log(isSubscribed);
     }
+
   }, [isSubscribed]);
 
   return (

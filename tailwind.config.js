@@ -9,6 +9,21 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    screens: {
+        'sm': {'max': '425px'},
+  
+        'md': {'min': '426px', 'max': '768px'},
+        // => @media (min-width: 768px and max-width: 1023px) { ... }
+  
+        'lg': {'min': '769px', 'max': '1024px'},
+        // => @media (min-width: 1024px and max-width: 1279px) { ... }
+  
+        'xl': {'min': '1025px', 'max': '1535px'},
+        // => @media (min-width: 1280px and max-width: 1535px) { ... }
+  
+        '2xl': {'min': '1536px'},
+        // => @media (min-width: 1536px) { ... }
+      },
     container: {
       center: true,
       padding: "2rem",
@@ -70,6 +85,7 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse": "pulse 0.4s ease-out-in",
       },
     },
   },

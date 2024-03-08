@@ -3,7 +3,7 @@ import HomePage from "./homePage/page";
 
 export default function Home() {
   return (
-    <div className=" py-60">
+    <div className="pt-60">
       <HomePage />
     </div>
   );
