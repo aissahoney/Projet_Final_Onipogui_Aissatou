@@ -29,35 +29,33 @@ export default function NavBar() {
           </Link>
         </div>
         <div
-          className="grid grid-cols-5  gap-0  md:gap-x-60
+          className="grid grid-cols-4 gap-0  md:gap-x-60
         md:grid-cols-1 sm:grid-cols-1"
         >
-          <p className="hover:text-orange-700 ">
-            {/* <Link href={"/"}>home</Link> */}
-          </p>
-          <p className="hover:text-orange-700 ">
+        
+          <p className="hover:text-orange-700 text-center">
             <Link href={"/allitems"}> Books</Link>
           </p>
           {isLoggedIn === false && (
-            <p className="hover:text-orange-700 ">
+             <p className="hover:text-orange-700 text-center">
               <Link href={"/subscription"}>Membership</Link>
             </p>
           )}
 
-          <p className="hover:text-orange-700 ">
+<p className="hover:text-orange-700 text-center">
             {isLoggedIn === true ? (
-              <Link href={"/"}>
+              <Link href={"/"} className="flex justify-center">
                 {" "}
                 <button onClick={() => dispatch(signOut())}>
                   {" "}
-                  <LogOut width={30}/>
+                  <LogOut/>
                 </button>{" "}
               </Link>
             ) : (
-              <Link href={"/connexion"}> Log-In <UserRound width={30}/> </Link>
+              <Link href={"/connexion"}className="flex justify-center"><UserRound/></Link>
             )}
           </p>
-          <p className="hover:text-orange-700 ">
+          <p className="hover:text-orange-700 text-center">
             <Link href={"/favoris"}> ♥️ Favorites </Link>
           </p>
         </div>
